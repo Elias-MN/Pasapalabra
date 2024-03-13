@@ -6,7 +6,7 @@ let letras = ["I", "E", "S", "A", "L", "B", "A", "R", "R", "E", "G", "A", "S"];
 let angulo = 360 / letras.length;
 let offset = 90;
 
-const mediaQuery = window.matchMedia('(width <= 350px)')
+const mediaQuery = window.matchMedia('(width <= 480px)')
 
 for (let i = 0; i < letras.length; i++) {
   let letra = document.createElement('span');
