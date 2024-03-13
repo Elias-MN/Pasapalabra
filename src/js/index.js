@@ -1,0 +1,25 @@
+let rosco = document.getElementById('rosco');
+
+let letras = ["I", "E", "S", "A", "L", "B", "A", "R", "R", "E", "G", "A", "S"];
+//let abecedario = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
+
+let angulo = 360 / letras.length;
+let offset = 90;
+
+const mediaQuery = window.matchMedia('(width <= 350px)')
+
+for (let i = 0; i < letras.length; i++) {
+  let letra = document.createElement('span');
+  letra.className = 'letra';
+  letra.id = "letra-" + i;
+  letra.textContent = letras[i];
+  let giro = i * angulo - offset;
+
+  // Responsive media query
+  if (mediaQuery.matches) {
+    letra.style.transform = 'rotate(' + giro + 'deg) translate(90px) rotate(' + (-giro) + 'deg)';
+  } else {
+    letra.style.transform = 'rotate(' + giro + 'deg) translate(130px) rotate(' + (-giro) + 'deg)';
+  }
+  rosco.appendChild(letra);
+}
