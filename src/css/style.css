@@ -4,9 +4,10 @@
   box-sizing: border-box;
   color: white;
   font-family: sans-serif;
+  text-wrap: balance;
 }
 
-main{
+.inicio-container, .juego-container, .final-container {
   min-width: 230px;
   padding: 8px;
   display: flex;
@@ -16,6 +17,17 @@ main{
   gap: 8px;
   height: 100dvh;
   background-image: repeating-radial-gradient(#0047c8, #56b5fe);
+
+  & input {
+    padding: 8px;
+    border-radius: 6px;
+    border: none;
+    color: #56b5fe;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: bolder;
+  }
 }
 
 #rosco-container{
@@ -59,7 +71,9 @@ main{
       font-size: larger;
     }
 
-
+    & #texto-pregunta {
+      width: 100%;
+    }
 }
 
 
@@ -158,6 +172,32 @@ main{
 
 }
 
+.oculta {
+  display: none;
+}
+
+.verde{
+  background-color: #3de38b;
+}
+
+.roja{
+  background-color: #fa467e;
+}
+
+.customButton{
+  background-color: #1899D6;
+  border-radius: 16px;
+  border-width: 0 0 2px;
+  font-size: 15px;
+  padding: 15px 25px;
+  font-weight: 700;
+  letter-spacing: .8px;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  margin-top: 18px;
+  cursor: pointer;
+}
+
 
 @media (width <= 600px) and  (width > 300px) {
 
@@ -176,9 +216,6 @@ main{
   }
 }
 
-
-
-
 @media (width <= 300px ) {
 
   #rosco-container{
@@ -195,3 +232,4 @@ main{
 
   }
 }
+

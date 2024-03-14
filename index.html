@@ -6,41 +6,56 @@
   <meta name='viewport' content='width=device-width, initial-scale=1.0'>
   <link rel=stylesheet href=./src/css/style.css>
   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-  <script src=./src/js/index.js defer></script>
+  <script type="module" src=./src/js/index.js defer></script>
+  <audio id="correctoAudio" src="./sounds/correcto.mp3"></audio>
+  <audio id="incorrectoAudio" src="./sounds/incorrecto.mp3"></audio>
+
   <title>Pasapalabra</title>
 </head>
 
 <body>
-  <main>
 
+  <div id="inicio" class="inicio-container ">
+    <h1>PASAPALABRA</h1>
+    <h3>Introduce tu nombre</h3>
+    <input type="text" name="concursante" id="concursante">
+    <button class="customButton" id="botonComenzar">Comenzar</button>
+  </div>
+
+  <div id="juego" class="juego-container oculta">
     <section id="rosco-container">
       <div id="rosco">
         <div id="pregunta">
-          <h3>Empieza por la <strong>I</strong></h3>
-          <p>Dirección única que identifica a un dispositivo en Internet o en una red local</p>
+          <h3>Empieza por la <strong id="letra-pregunta">...</strong></h3>
+          <p id="texto-pregunta">...</p>
         </div>
       </div>
     </section>
 
     <section id="info-container">
       <div id="tiempo-container">
-        <span id="tiempo">1:56</span>
+        <span id="tiempo">2:00</span>
       </div>
       <div id="aciertos-container">
-        <span id="aciertos">3</span>
-        <span id="fallos">1</span>
+        <span id="aciertos">0</span>
+        <span id="fallos">0</span>
       </div>
     </section>
 
     <section id="input-container">
-      <input type="text" placeholder="..." id="respuesta">
+      <input type="text" id="respuesta">
       <button id="botonRespuesta">
         <img src="img/send.svg" alt="Enviar" class="send-icon">
       </button>
     </section>
+  </div>
 
+  <div id="final" class="final-container oculta">
+    <h1>RESULTADOS</h1>
+    <h3>Aciertos: <strong id="aciertosFinales">0</strong> y fallos: <strong id="fallosFinales">0</strong></h3>
+    <button class="customButton" id="botonReiniciar">Reiniciar</button>
+  </div>
 
-  </main>
 </body>
 
 </html>

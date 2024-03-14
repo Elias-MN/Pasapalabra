@@ -1,21 +1,59 @@
+import json from '../preguntas.json' assert { type: "json" };
+
+//Elementos menú inicial
+let inicioElement = document.getElementById('inicio');
+let botonComenzarElement = document.getElementById('botonComenzar');
+let concursanteElement = document.getElementById('concursante');
+
+//Elementos juego
+let juegoElement = document.getElementById('juego');
 let roscoElement = document.getElementById('rosco');
+let preguntaElement = document.getElementById('texto-pregunta');
+let letraElement = document.getElementById('letra-pregunta');
 let tiempoElement = document.getElementById('tiempo');
 let aciertosElement = document.getElementById('aciertos');
 let fallosElement = document.getElementById('fallos');
 let respuestaElement = document.getElementById('respuesta');
 let botonRespuestaElement = document.getElementById('botonRespuesta');
+let respuestaCorrectaAudio = document.getElementById('correctoAudio');
+let respuestaIncorrectaAudio = document.getElementById('incorrectoAudio');
 
-let letras = ["I", "E", "S", "A", "L", "B", "A", "R", "R", "E", "G", "A", "S"];
-//let abecedario = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
+//Elementos menú reiniciar
+let finalElement = document.getElementById('final');
+let botonReiniciarElement = document.getElementById('botonReiniciar');
+let aciertosFinalesElement = document.getElementById('aciertosFinales');
+let fallosFinalesElement = document.getElementById('fallosFinales');
+
+
+let letras = json.listado;
 let angulo = 360 / letras.length;
 let compensacion = 90;
-let segundosTotales = 100;
-let segundosActuales = segundosTotales;
-let tiempo;
+let segundosTotales;
+let segundosActuales;
+let tiempoInvervalo;
+let concursante;
+let aciertos;
+let fallos;
+let idPreguntaActual;
+
 
 function iniciar() {
+  concursanteElement.value = "";
+  aciertos = 0;
+  fallos = 0;
+  idPreguntaActual = 0;
+  segundosTotales = 120;
+  segundosActuales = segundosTotales;
+
+  let letrasElement = document.querySelectorAll('.letra');
+  for (let letra = 0; letra < letrasElement.length; letra++) {
+    letrasElement[letra].remove();
+  }
+
+  pintarPregunta();
   pintarRosco();
   iniciarTemporizador();
+  iniciarPuntuaciones();
 }
 
 function pintarRosco() {
@@ -23,7 +61,7 @@ function pintarRosco() {
     let letra = document.createElement('span');
     letra.className = 'letra';
     letra.id = "letra-" + i;
-    letra.textContent = letras[i];
+    letra.textContent = letras[i].letra;
     let giro = i * angulo - compensacion;
     let ancho = (roscoElement.offsetWidth / 2) - 18;
     letra.style.transform = 'rotate(' + giro + 'deg) translate(' + ancho + 'px) rotate(' + (-giro) + 'deg)';
@@ -31,15 +69,57 @@ function pintarRosco() {
   }
 }
 
+function pintarPregunta() {
+  preguntaElement.innerHTML = letras[idPreguntaActual].pregunta;
+  letraElement.innerHTML = letras[idPreguntaActual].letra;
+}
+
 function iniciarTemporizador() {
   restarSegundo();
-  tiempo = setInterval(() => {
+  tiempoInvervalo = setInterval(() => {
     if (segundosActuales === 0) {
-      tiempoElement.innerHTML = "0:00";
-      clearInterval(tiempo);
+      finJuego();
     }
     restarSegundo();
   }, 1000);
+}
+
+function finJuego() {
+  tiempoElement.innerHTML = "0:00";
+  clearInterval(tiempoInvervalo);
+  juegoElement.classList.add("oculta");
+  finalElement.classList.remove("oculta");
+  aciertosFinalesElement.innerText = aciertos;
+  fallosFinalesElement.innerText = fallos;
+
+  // TODO: Enviar resultados al servidor
+  let resultadoConcursante = {
+    nombre: concursante,
+    aciertos: aciertos,
+    fallos: fallos
+  }
+  console.log(resultadoConcursante);
+}
+
+function iniciarPuntuaciones() {
+  aciertosElement.innerHTML = aciertos;
+  fallosElement.innerHTML = fallos;
+}
+
+function sumarPunto() {
+  aciertos++;
+  aciertosElement.innerHTML = aciertos;
+  let letra = document.getElementById("letra-" + idPreguntaActual);
+  letra.classList.add("verde");
+  respuestaCorrectaAudio.play();
+}
+
+function sumarIncorrecto() {
+  fallos++;
+  fallosElement.innerHTML = fallos;
+  let letra = document.getElementById("letra-" + idPreguntaActual);
+  letra.classList.add("roja");
+  respuestaIncorrectaAudio.play();
 }
 
 function restarSegundo() {
@@ -57,4 +137,49 @@ function formatearTiempo(segundos) {
   return minutos + ':' + segundosRestantes;
 }
 
-iniciar();
+function procesarRespuesta() {
+  let respuestaValue = respuestaElement.value;
+  respuestaValue = respuestaValue.toUpperCase();
+
+  if (respuestaValue === letras[idPreguntaActual].respuesta) {
+    sumarPunto();
+  } else {
+    sumarIncorrecto();
+  }
+  respuestaElement.value = "";
+  idPreguntaActual++;
+  if (idPreguntaActual === letras.length) {
+    // Se han acabado las preguntas
+    finJuego();
+  } else {
+    // Siguiente pregunta
+    pintarPregunta();
+  }
+
+}
+
+botonComenzarElement.addEventListener("click", (event) => {
+  if (concursanteElement.value.trim() === "") {
+    concursante = "Anónimo";
+  } else {
+    concursante = concursanteElement.value.trim();
+  }
+  inicioElement.classList.add("oculta");
+  juegoElement.classList.remove("oculta");
+  iniciar();
+});
+
+botonReiniciarElement.addEventListener("click", (event) => {
+  finalElement.classList.add("oculta");
+  inicioElement.classList.remove("oculta");
+});
+
+botonRespuestaElement.addEventListener("click", () => {
+  procesarRespuesta();
+});
+
+respuestaElement.addEventListener("keydown", (event) => {
+  if (event.key === "Enter") {
+    procesarRespuesta();
+  }
+});
