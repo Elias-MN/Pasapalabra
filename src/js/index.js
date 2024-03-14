@@ -6,8 +6,6 @@ let letras = ["I", "E", "S", "A", "L", "B", "A", "R", "R", "E", "G", "A", "S"];
 let angulo = 360 / letras.length;
 let offset = 90;
 
-const mediaQuery = window.matchMedia('(width <= 600px)')
-
 for (let i = 0; i < letras.length; i++) {
   let letra = document.createElement('span');
   letra.className = 'letra';
@@ -15,11 +13,8 @@ for (let i = 0; i < letras.length; i++) {
   letra.textContent = letras[i];
   let giro = i * angulo - offset;
 
-  // Responsive media query
-  if (mediaQuery.matches) {
-    letra.style.transform = 'rotate(' + giro + 'deg) translate(90px) rotate(' + (-giro) + 'deg)';
-  } else {
-    letra.style.transform = 'rotate(' + giro + 'deg) translate(130px) rotate(' + (-giro) + 'deg)';
-  }
+  let ancho = (rosco.offsetWidth / 2) - 18;
+  letra.style.transform = 'rotate(' + giro + 'deg) translate(' + ancho + 'px) rotate(' + (-giro) + 'deg)';
+
   rosco.appendChild(letra);
 }
