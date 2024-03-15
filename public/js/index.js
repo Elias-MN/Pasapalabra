@@ -174,7 +174,7 @@ function procesarRespuesta() {
 }
 
 function obtenerJson() {
-  fetch("./src/preguntas.json")
+  fetch("/preguntas.json")
     .then((response) => response.json())
     .then((data) => {
       json = data;
