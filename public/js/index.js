@@ -84,6 +84,18 @@ function iniciarTemporizador() {
   }, 1000);
 }
 
+function sendToServer(result) {
+  console.log("Sending results to server...")
+  const socket = io({
+    auth: {
+      serverOffset: 0,
+    },
+    ackTimeout: 10000,
+    retries: 3,
+  });
+  socket.emit("new player finished", result);
+}
+
 function finJuego() {
   tiempoElement.innerHTML = "0:00";
   clearInterval(tiempoInvervalo);
@@ -100,8 +112,11 @@ function finJuego() {
     time: segundosTotales - segundosActuales,
     date: new Date()
   }
+  sendToServer(resultadoConcursante);
   console.log(resultadoConcursante);
 }
+
+
 
 function iniciarPuntuaciones() {
   aciertosElement.innerHTML = aciertos;

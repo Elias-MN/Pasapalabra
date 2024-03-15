@@ -4,11 +4,17 @@
 <head>
   <meta charset=UTF-8>
   <meta name='viewport' content='width=device-width, initial-scale=1.0'>
-  <link rel=stylesheet href=./src/css/style.css>
+  <link rel=stylesheet href=/css/style.css>
   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-  <script type="module" src=./src/js/index.js defer></script>
-  <audio id="correctoAudio" src="./sounds/correcto.mp3"></audio>
-  <audio id="incorrectoAudio" src="./sounds/incorrecto.mp3"></audio>
+  <script src="/socket.io/socket.io.js"></script>
+  <script
+    src="https://code.jquery.com/jquery-3.7.1.min.js"
+    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+    crossorigin="anonymous"
+  ></script>
+  <script type="module" src=/js/index.js defer></script>
+  <audio id="correctoAudio" src="/sounds/correcto.mp3"></audio>
+  <audio id="incorrectoAudio" src="/sounds/incorrecto.mp3"></audio>
 
   <title>Pasapalabra</title>
 </head>
@@ -55,6 +61,9 @@
     <h3>Aciertos: <strong id="aciertosFinales">0</strong> y fallos: <strong id="fallosFinales">0</strong></h3>
     <button class="customButton" id="botonReiniciar">Reiniciar</button>
   </div>
+
+
+
 
 </body>
 
