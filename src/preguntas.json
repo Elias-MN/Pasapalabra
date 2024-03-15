@@ -16,34 +16,54 @@
       "respuesta": "SOFTWARE"
     },
     {
-      "letra": "I",
-      "pregunta": "Dirección única que identifica a un dispositivo en Internet o en una red local",
-      "respuesta": "IP"
+      "letra": "A",
+      "pregunta": "Modo de ejecución no secuncial",
+      "respuesta": "ASINCRONIA"
+    },
+    {
+      "letra": "L",
+      "pregunta": "Red de comunicación local",
+      "respuesta": "LAN"
+    },
+    {
+      "letra": "B",
+      "pregunta": "Error que se produce cuando un programa no funciona correctamente",
+      "respuesta": "BUG"
+    },
+    {
+      "letra": "A",
+      "pregunta": "Código de caracteres que se utiliza para representar letras",
+      "respuesta": "ASCII"
+    },
+    {
+      "letra": "R",
+      "pregunta": "Memoria rápida que se sitúa entre la memoría principal y la CPU",
+      "respuesta": "RAM"
+    },
+    {
+      "letra": "R",
+      "pregunta": "Dispositivo que se encarga de enrutar los paquetes que viajan por la red",
+      "respuesta": "ROUTER"
     },
     {
       "letra": "E",
-      "pregunta": "Nombre del primer lenguaje de programación de alto nivel",
-      "respuesta": "ENSAMBLADOR"
+      "pregunta": "Cable de red utilizado para la transmision de datos",
+      "respuesta": "ETHERNET"
     },
     {
-      "letra": "I",
-      "pregunta": "Dirección única que identifica a un dispositivo en Internet o en una red local",
-      "respuesta": "IP"
+      "letra": "G",
+      "pregunta": "Unidad de proceso para el procesamiento en paralelo (tarjetas gráficas)",
+      "respuesta": "GPU"
     },
     {
-      "letra": "E",
-      "pregunta": "Nombre del primer lenguaje de programación de alto nivel",
-      "respuesta": "ENSAMBLADOR"
+      "letra": "A",
+      "pregunta": "Pasos que se llevan a cabo en un ordenador para realizar una tarea",
+      "respuesta": "ALGORITMO"
     },
     {
-      "letra": "I",
-      "pregunta": "Dirección única que identifica a un dispositivo en Internet o en una red local",
-      "respuesta": "IP"
-    },
-    {
-      "letra": "E",
-      "pregunta": "Nombre del primer lenguaje de programación de alto nivel",
-      "respuesta": "ENSAMBLADOR"
+      "letra": "S",
+      "pregunta": "Programa que se ejecuta en un ordenador para realizar una tarea",
+      "respuesta": "SCRIPT"
     }
   ]
 }

@@ -94,9 +94,11 @@ function finJuego() {
 
   // TODO: Enviar resultados al servidor
   let resultadoConcursante = {
-    nombre: concursante,
-    aciertos: aciertos,
-    fallos: fallos
+    name: concursante,
+    successes: aciertos,
+    mistakes: fallos,
+    time: segundosTotales - segundosActuales,
+    date: new Date()
   }
   console.log(resultadoConcursante);
 }
