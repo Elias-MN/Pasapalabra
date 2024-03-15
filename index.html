@@ -6,6 +6,7 @@
   <meta name='viewport' content='width=device-width, initial-scale=1.0'>
   <link rel=stylesheet href=/css/style.css>
   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <script src="https://cdn.tailwindcss.com"></script>
   <script src="/socket.io/socket.io.js"></script>
   <script
     src="https://code.jquery.com/jquery-3.7.1.min.js"
@@ -21,11 +22,17 @@
 
 <body>
 
-  <div id="inicio" class="inicio-container ">
-    <h1>PASAPALABRA</h1>
-    <h2>Introduce tu nombre</h2>
-    <input type="text" name="concursante" id="concursante">
-    <button class="customButton" id="botonComenzar">Comenzar</button>
+  <div id="inicio" class="inicio-container">
+    <div class=" w-3/4 flex flex-col items-center ">
+      <div class="flex flex-col items-center space-y-1">
+        <h1 class="text-3xl">PASAPALABRA</h1>
+        <h2 class="text-xl">Introduce tu nombre</h2>
+
+        <input type="text" name="concursante" id="concursante">
+      </div>
+    
+      <button class="mt-4 customButton" id="botonComenzar">Comenzar</button>
+    </div>
   </div>
 
   <div id="juego" class="juego-container oculta">
