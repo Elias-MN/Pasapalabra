@@ -63,7 +63,7 @@ function pintarRosco() {
     letra.id = "letra-" + i;
     letra.textContent = letras[i].letra;
     let giro = i * angulo - compensacion;
-    let ancho = (roscoElement.offsetWidth / 2) - 18;
+    let ancho = (roscoElement.offsetWidth / 2) - 25;
     letra.style.transform = 'rotate(' + giro + 'deg) translate(' + ancho + 'px) rotate(' + (-giro) + 'deg)';
     roscoElement.appendChild(letra);
   }

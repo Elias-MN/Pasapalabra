@@ -8,7 +8,7 @@
 }
 
 h3, p{
-  font-size: 5dvw;
+  font-size: 1.5em;
 }
 
 .inicio-container, .juego-container, .final-container {
@@ -39,7 +39,7 @@ h3, p{
   padding: 10px;
 
     & #rosco {
-      width: 100%;
+      width: 90dvw;
       height: 100%;
       background: radial-gradient(circle, #56b5fe, #0038a1);
       border-radius: 50%;
@@ -51,13 +51,13 @@ h3, p{
     }
 
     & #pregunta{
-      width: 50%;
+      width: 60%;
       text-align: center;
     }
 
     & .letra {
-      width: 40px;
-      height: 40px;
+      width: 60px;
+      height: 60px;
       border: 2px solid rgb(255, 255, 255);
       border-radius: 50%;
       display: flex;
@@ -65,6 +65,7 @@ h3, p{
       align-items: center;
       position: absolute;
       transform-origin: center;
+      background-color: #56b5fe;
     }
 
     & h3{
@@ -72,7 +73,7 @@ h3, p{
     }
 
     & strong{
-      font-size: 8dvw;
+      font-size: 2em;
     }
 
     & #texto-pregunta {
@@ -203,32 +204,45 @@ h3, p{
 }
 
 
-@media (width <= 600px) and  (width > 300px) {
+@media (width <= 600px) and  (width > 320px) {
+
+  #rosco-container{
+
+    & .letra {
+      width: 50px;
+      height: 50px;
+    }
+
+    & h3, p{
+      font-size: 1.25em;
+    }
+
+    & strong{
+      font-size: 1.5em;
+    }
+
+    & #pregunta{
+      width: 75%;
+    }
+  }
+}
+
+@media (width <= 320px ) {
 
   #rosco-container{
 
     & .letra {
       width: 30px;
       height: 30px;
-      border: 1px solid rgb(255, 255, 255);
-    }
-  }
-}
-
-@media (width <= 300px ) {
-
-  #rosco-container{
-
-    & .letra {
-      width: 20px;
-      height: 20px;
-      border: 1px solid rgb(255, 255, 255);
     }
 
     & h3, p{
-      font-size: x-small;
+      font-size: 1em;
     }
 
+    & strong{
+      font-size: 1.5em;
+    }
   }
 }
 

@@ -14,6 +14,36 @@
       "letra": "S",
       "pregunta": "Conjunto de programas, instrucciones y reglas informáticas para ejecutar ciertas tareas en una computadora",
       "respuesta": "SOFTWARE"
+    },
+    {
+      "letra": "I",
+      "pregunta": "Dirección única que identifica a un dispositivo en Internet o en una red local",
+      "respuesta": "IP"
+    },
+    {
+      "letra": "E",
+      "pregunta": "Nombre del primer lenguaje de programación de alto nivel",
+      "respuesta": "ENSAMBLADOR"
+    },
+    {
+      "letra": "I",
+      "pregunta": "Dirección única que identifica a un dispositivo en Internet o en una red local",
+      "respuesta": "IP"
+    },
+    {
+      "letra": "E",
+      "pregunta": "Nombre del primer lenguaje de programación de alto nivel",
+      "respuesta": "ENSAMBLADOR"
+    },
+    {
+      "letra": "I",
+      "pregunta": "Dirección única que identifica a un dispositivo en Internet o en una red local",
+      "respuesta": "IP"
+    },
+    {
+      "letra": "E",
+      "pregunta": "Nombre del primer lenguaje de programación de alto nivel",
+      "respuesta": "ENSAMBLADOR"
     }
   ]
 }
