@@ -47,16 +47,6 @@
         retries: 3,
       });
 
-      function test(socket) {
-        socket.emit("new player finished", {
-          name: "Anonymous",
-          successes: 14,
-          mistakes: 2,
-          time: 152, //seconds
-          date: new Date(),
-        });
-      }
-
       function loadResults() {
         var table = document.getElementById("resultsTable");
         fetch("http://localhost:3000/results").then((response) => {
