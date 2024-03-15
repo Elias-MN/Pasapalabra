@@ -36,7 +36,6 @@ h3, p{
 
 #rosco-container{
   aspect-ratio: 1 / 1;
-  padding: 10px;
   width: 80dvh;
   height: 80dvh;
 
@@ -216,7 +215,7 @@ h3, p{
 @media (width <= 600px) and  (width > 320px) {
 
   #rosco-container{
-    width: 90dvw;
+    width: 95dvw;
 
     & .letra {
       width: 45px;
