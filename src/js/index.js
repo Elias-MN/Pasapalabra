@@ -1,5 +1,3 @@
-import json from '../preguntas.json' assert { type: "json" };
-
 //Elementos menú inicial
 let inicioElement = document.getElementById('inicio');
 let botonComenzarElement = document.getElementById('botonComenzar');
@@ -24,9 +22,9 @@ let botonReiniciarElement = document.getElementById('botonReiniciar');
 let aciertosFinalesElement = document.getElementById('aciertosFinales');
 let fallosFinalesElement = document.getElementById('fallosFinales');
 
-
-let letras = json.listado;
-let angulo = 360 / letras.length;
+let json;
+let letras;
+let angulo;
 let compensacion = 90;
 let segundosTotales;
 let segundosActuales;
@@ -159,6 +157,19 @@ function procesarRespuesta() {
   }
 
 }
+
+function obtenerJson() {
+  fetch("./src/preguntas.json")
+    .then((response) => response.json())
+    .then((data) => {
+      json = data;
+      letras = json.listado;
+      angulo = 360 / letras.length;
+    })
+    .catch((error) => console.error("Error loading JSON file", error));
+}
+
+obtenerJson();
 
 botonComenzarElement.addEventListener("click", (event) => {
   if (concursanteElement.value.trim() === "") {
