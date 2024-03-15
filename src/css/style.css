@@ -184,11 +184,11 @@ h3, p{
 }
 
 .verde{
-  background-color: #3de38b;
+  background-color: #3de38b !important;
 }
 
 .roja{
-  background-color: #fa467e;
+  background-color: #fa467e !important;
 }
 
 .customButton{
