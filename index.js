@@ -7,16 +7,20 @@ import sqlite3 from 'sqlite3';
 import { open } from 'sqlite';
 import pino from 'pino';
 import path from 'path';
+import { log } from 'node:console';
 
 const logger = pino({
   level: 'info'
 });
 
+logger.info("Opening database...");
 const db = await open({
-  filename: 'pasapalabra.db',
+  filename: 'db.sqlite',
   driver: sqlite3.Database
-});
+})
+logger.info("Database opened");
 
+logger.info("Creating tables...");
 await db.exec(`
     CREATE TABLE IF NOT EXISTS playerResult (
       id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -26,6 +30,7 @@ await db.exec(`
       time INTEGER
     );
   `);
+logger.info("Tables created");
 
 const app = express();
 
@@ -36,10 +41,12 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 app.use(express.static(path.join(__dirname, "public")));
 
 app.get('/', (req, res) => {
+  logger.info("Serving index.html");
   res.sendFile(join(__dirname, 'index.html'));
 });
 
 app.get('/dashboard', (req, res) => {
+  logger.info("Serving dashboard.html");
   res.sendFile(join(__dirname, 'dashboard.html'));
 });
 

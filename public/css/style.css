@@ -11,22 +11,27 @@ h3, p{
   font-size: 1.5em;
 }
 
-.inicio-container, .juego-container, .final-container {
+ .final-container {
   min-width: 230px;
   padding: 8px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 8px;
-  height: 100dvh;
   background-image: repeating-radial-gradient(#0047c8, #56b5fe);
 
   & input {
-    padding: 8px;
-    border-radius: 6px;
-    border: none;
-    color: #56b5fe;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: bolder;
+  }
+}
+
+.inicio-container, .juego-container{
+  background-image: repeating-radial-gradient(#0047c8, #56b5fe);
+
+  & input {
     text-align: center;
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -35,13 +40,8 @@ h3, p{
 }
 
 #rosco-container{
-  aspect-ratio: 1 / 1;
-  width: 80dvh;
-  height: 80dvh;
 
     & #rosco {
-      width: 100%;
-      height: 100%;
       background: radial-gradient(circle, #56b5fe, #0038a1);
       border-radius: 50%;
       display: flex;
@@ -84,18 +84,7 @@ h3, p{
 
 
 #info-container{
-  display: flex;
-  justify-content: space-around;
-  width: 100%;
-
   & #tiempo-container{
-    width: 30px;
-    height: 30px;
-    border: 1.5px solid rgb(255, 255, 255);
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     background-color: #56b5fe;
     padding: 5px;
     box-sizing: content-box;
@@ -108,31 +97,16 @@ h3, p{
       position: absolute;
       top: 5px;
       right: 10px;
-      width: 20px;
-      height: 20px;
-      border: 1.5px solid rgb(255, 255, 255);
-      border-radius: 50%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+
       background-color: #3de38b;
-      padding: 5px;
       box-sizing: content-box;
     }
 
     & #fallos{
       position: absolute;
-      right: 0px;
-      bottom: 35px;
-      width: 10px;
-      height: 10px;
-      border: 1.5px solid rgb(255, 255, 255);
-      border-radius: 50%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      right: -9px;
+      bottom: 30px;
       background-color: #fa467e;
-      padding: 5px;
       box-sizing: content-box;
     }
 
@@ -142,14 +116,7 @@ h3, p{
 
 #input-container{
 
-  display: flex;
-  align-items: center;
-  gap: 4px;
-
   & input{
-    padding: 8px;
-    border-radius: 6px;
-    border: none;
     color: #56b5fe;
     text-align: center;
     text-transform: uppercase;
@@ -158,14 +125,9 @@ h3, p{
   }
 
   & button{
-    display: flex;
     cursor: pointer;
-    appearance: none;
     background-color: white;
     border: 1px solid rgb(59, 59, 59);
-    border-radius: 50%;
-    padding:5px;
-    box-shadow: 1px 1px 2px black;
   }
 
   & button:hover{
@@ -179,7 +141,7 @@ h3, p{
 }
 
 .oculta {
-  display: none;
+  display: none !important;
 }
 
 .verde{
@@ -203,13 +165,6 @@ h3, p{
   cursor: pointer;
 }
 
-
-@media only screen and (max-device-width: 600px) {
-  #rosco-container{
-    width: 100dvw;
-    height: auto;
-  }
-}
 
 @media (width <= 600px) and  (width > 320px) {
 

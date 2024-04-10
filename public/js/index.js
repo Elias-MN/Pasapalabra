@@ -163,6 +163,7 @@ function procesarRespuesta() {
   }
   respuestaElement.value = "";
   idPreguntaActual++;
+
   if (idPreguntaActual === letras.length) {
     // Se han acabado las preguntas
     finJuego();
@@ -192,14 +193,14 @@ botonComenzarElement.addEventListener("click", (event) => {
   } else {
     concursante = concursanteElement.value.trim();
   }
-  inicioElement.classList.add("oculta");
-  juegoElement.classList.remove("oculta");
+  inicioElement.classList.add("hidden");
+  juegoElement.classList.remove("hidden");
   iniciar();
 });
 
 botonReiniciarElement.addEventListener("click", (event) => {
-  finalElement.classList.add("oculta");
-  inicioElement.classList.remove("oculta");
+  finalElement.classList.add("hidden");
+  inicioElement.classList.remove("hidden");
 });
 
 botonRespuestaElement.addEventListener("click", () => {
