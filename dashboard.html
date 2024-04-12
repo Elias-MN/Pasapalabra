@@ -47,11 +47,11 @@
             response.json().then((results) => {
               $("#resultsTable tr").remove();
               var row = table.insertRow();
-              row.insertCell().innerText = "Name";
-              row.insertCell().innerText = "Successes";
-              row.insertCell().innerText = "Mistakes";
-              row.insertCell().innerText = "Time";
-              row.insertCell().innerText = "Position";
+              row.insertCell().innerText = "Nombre";
+              row.insertCell().innerText = "Correctas";
+              row.insertCell().innerText = "Errores";
+              row.insertCell().innerText = "Tiempo";
+              row.insertCell().innerText = "Posición";
 
               results.forEach((element, index) => {
                 var row = table.insertRow();
