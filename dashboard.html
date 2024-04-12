@@ -14,15 +14,26 @@
       }
     </style>
   </head>
-  <body class="bg-blue-400 flex flex-col items-center">
-    <div class="w-full flex flex-col items-center jusify-center mt-10">
-      <h1 class="text-3xl w-4/5 text-white font-bold mb-2">
+  <body class="h-screen bg-blue-400 flex flex-col items-center">
+    <div class="h-full w-full flex flex-col items-center jusify-center mt-10">
+      <h1 id="tableTitle" class="text-3xl w-4/5 text-white font-bold mb-2">
         Tabla de clasificación
       </h1>
       <table
         id="resultsTable"
         class="table-auto w-4/5 text-center bg-blue-500 text-white border-2 border-white rounded-md"
       ></table>
+
+      <div
+        id="noResultsMessage"
+        class="h-full flex flex-col items-center justify-center"
+      >
+        <h2 class="text-lg text-white">Todavía no hay resultados...</h2>
+        <img
+          src="https://media.tenor.com/JK3yt5L0j_gAAAAj/sad-stitch.gif"
+          alt="No hay resultados"
+        />
+      </div>
     </div>
 
     <script src="/socket.io/socket.io.js"></script>
@@ -44,25 +55,29 @@
         var table = document.getElementById("resultsTable");
         fetch("http://informatica.iesalbarregas.com:7011/results").then(
           (response) => {
-            response.json().then((results) => {
-              $("#resultsTable tr").remove();
-              var row = table.insertRow();
-              row.insertCell().innerText = "Nombre";
-              row.insertCell().innerText = "Correctas";
-              row.insertCell().innerText = "Errores";
-              row.insertCell().innerText = "Tiempo";
-              row.insertCell().innerText = "Posición";
-
-              results.forEach((element, index) => {
+            if (response.json().length == 0) {
+              $("#noResultsMessage").remove();
+            } else {
+              response.json().then((results) => {
+                $("#resultsTable tr").remove();
                 var row = table.insertRow();
+                row.insertCell().innerText = "Nombre";
+                row.insertCell().innerText = "Correctas";
+                row.insertCell().innerText = "Errores";
+                row.insertCell().innerText = "Tiempo";
+                row.insertCell().innerText = "Posición";
 
-                row.insertCell().innerText = element.name;
-                row.insertCell().innerText = element.successes;
-                row.insertCell().innerText = element.mistakes;
-                row.insertCell().innerText = element.time;
-                row.insertCell().innerText = index + 1;
+                results.forEach((element, index) => {
+                  var row = table.insertRow();
+
+                  row.insertCell().innerText = element.name;
+                  row.insertCell().innerText = element.successes;
+                  row.insertCell().innerText = element.mistakes;
+                  row.insertCell().innerText = element.time;
+                  row.insertCell().innerText = index + 1;
+                });
               });
-            });
+            }
           }
         );
       }
