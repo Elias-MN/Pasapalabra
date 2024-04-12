@@ -42,27 +42,29 @@
 
       function loadResults() {
         var table = document.getElementById("resultsTable");
-        fetch("http://localhost:3000/results").then((response) => {
-          response.json().then((results) => {
-            $("#resultsTable tr").remove();
-            var row = table.insertRow();
-            row.insertCell().innerText = "Name";
-            row.insertCell().innerText = "Successes";
-            row.insertCell().innerText = "Mistakes";
-            row.insertCell().innerText = "Time";
-            row.insertCell().innerText = "Position";
-
-            results.forEach((element, index) => {
+        fetch("http://informatica.iesalbarregas.com:7011/results").then(
+          (response) => {
+            response.json().then((results) => {
+              $("#resultsTable tr").remove();
               var row = table.insertRow();
+              row.insertCell().innerText = "Name";
+              row.insertCell().innerText = "Successes";
+              row.insertCell().innerText = "Mistakes";
+              row.insertCell().innerText = "Time";
+              row.insertCell().innerText = "Position";
 
-              row.insertCell().innerText = element.name;
-              row.insertCell().innerText = element.successes;
-              row.insertCell().innerText = element.mistakes;
-              row.insertCell().innerText = element.time;
-              row.insertCell().innerText = index + 1;
+              results.forEach((element, index) => {
+                var row = table.insertRow();
+
+                row.insertCell().innerText = element.name;
+                row.insertCell().innerText = element.successes;
+                row.insertCell().innerText = element.mistakes;
+                row.insertCell().innerText = element.time;
+                row.insertCell().innerText = index + 1;
+              });
             });
-          });
-        });
+          }
+        );
       }
 
       loadResults();
