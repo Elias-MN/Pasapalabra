@@ -2,27 +2,27 @@
   "listado": [
     {
       "letra": "I",
-      "pregunta": "Dirección única que identifica a un dispositivo en Internet o en una red local",
+      "pregunta": "Siglas que indican la dirección única que identifica a un dispositivo en la red",
       "respuesta": "IP"
     },
     {
       "letra": "E",
-      "pregunta": "Nombre del primer lenguaje de programación de alto nivel",
-      "respuesta": "ENSAMBLADOR"
+      "pregunta": "Acción para poner en funcionamiento un programa",
+      "respuesta": "Ejecutar"
     },
     {
       "letra": "S",
-      "pregunta": "Conjunto de programas, instrucciones y reglas informáticas para ejecutar ciertas tareas en una computadora",
+      "pregunta": "Conjunto de programas, instrucciones y reglas informáticas para ejecutar ciertas tareas en un PC",
       "respuesta": "SOFTWARE"
     },
     {
       "letra": "A",
-      "pregunta": "Modo de ejecución no secuncial",
-      "respuesta": "ASINCRONIA"
+      "pregunta": "Framework de Google para desarrollar aplicaciones web SPA",
+      "respuesta": "Angular"
     },
     {
       "letra": "L",
-      "pregunta": "Red de comunicación local",
+      "pregunta": "Siglas con las que conocemos la Red de Comunicación Local",
       "respuesta": "LAN"
     },
     {
@@ -32,12 +32,12 @@
     },
     {
       "letra": "A",
-      "pregunta": "Código de caracteres que se utiliza para representar letras",
-      "respuesta": "ASCII"
+      "pregunta": "Programa informático preparado para un uso específico",
+      "respuesta": "Aplicación"
     },
     {
       "letra": "R",
-      "pregunta": "Memoria rápida que se sitúa entre la memoría principal y la CPU",
+      "pregunta": "Siglas con las que conocemos la memoria de acceso aleatorio",
       "respuesta": "RAM"
     },
     {
@@ -47,22 +47,22 @@
     },
     {
       "letra": "E",
-      "pregunta": "Cable de red utilizado para la transmision de datos",
-      "respuesta": "ETHERNET"
+      "pregunta": "Programa que nos permite jugar a la Play Station en nuestro PC",
+      "respuesta": "Emulador"
     },
     {
       "letra": "G",
-      "pregunta": "Unidad de proceso para el procesamiento en paralelo (tarjetas gráficas)",
+      "pregunta": "Siglas con las que conocemos la unidad de procesamiento gráfico",
       "respuesta": "GPU"
     },
     {
       "letra": "A",
-      "pregunta": "Pasos que se llevan a cabo en un ordenador para realizar una tarea",
+      "pregunta": "Conjunto de instrucciones que se llevan a cabo en un PC para realizar una tarea",
       "respuesta": "ALGORITMO"
     },
     {
       "letra": "S",
-      "pregunta": "Programa que se ejecuta en un ordenador para realizar una tarea",
+      "pregunta": "Archivo de texto que contiene una secuencia de comandos para realizar tareas automáticas",
       "respuesta": "SCRIPT"
     }
   ]
