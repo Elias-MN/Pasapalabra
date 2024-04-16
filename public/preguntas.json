@@ -8,7 +8,7 @@
     {
       "letra": "E",
       "pregunta": "Acción para poner en funcionamiento un programa",
-      "respuesta": "Ejecutar"
+      "respuesta": "EJECUTAR"
     },
     {
       "letra": "S",
@@ -18,11 +18,11 @@
     {
       "letra": "A",
       "pregunta": "Framework de Google para desarrollar aplicaciones web SPA",
-      "respuesta": "Angular"
+      "respuesta": "ANGULAR"
     },
     {
       "letra": "L",
-      "pregunta": "Siglas con las que conocemos la Red de Comunicación Local",
+      "pregunta": "Siglas con las que conocemos la Red de Área Local",
       "respuesta": "LAN"
     },
     {
@@ -33,7 +33,7 @@
     {
       "letra": "A",
       "pregunta": "Programa informático preparado para un uso específico",
-      "respuesta": "Aplicación"
+      "respuesta": "APLICACION"
     },
     {
       "letra": "R",
@@ -48,7 +48,7 @@
     {
       "letra": "E",
       "pregunta": "Programa que nos permite jugar a la Play Station en nuestro PC",
-      "respuesta": "Emulador"
+      "respuesta": "EMULADOR"
     },
     {
       "letra": "G",
