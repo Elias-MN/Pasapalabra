@@ -25,7 +25,7 @@ await db.exec(`
     CREATE TABLE IF NOT EXISTS playerResult (
       id INTEGER PRIMARY KEY AUTOINCREMENT,
       name TEXT,
-      successes TEXT,
+      successes INTEGER,
       mistakes INTEGER,
       time INTEGER
     );
@@ -53,7 +53,7 @@ app.get('/dashboard', (req, res) => {
 app.get('/results', async (req, res) => {
   logger.info("results requested");
 
-  const results = await db.all('SELECT * FROM playerResult ORDER BY time DESC');
+  const results = await db.all('SELECT * FROM playerResult ORDER BY successes DESC');
 
   logger.info(results);
 
